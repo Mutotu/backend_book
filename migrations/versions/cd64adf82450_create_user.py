@@ -20,13 +20,16 @@ depends_on = None
 def upgrade():
     op.create_table(
         'user',
-        sa.Column('id', sa.Integer, primary_key=True, nullable=False),
+        sa.Column('id', sa.Integer, primary_key=True),
+        sa.Column('username', sa.String, nullable=False, unique=True),
         sa.Column('email', sa.String, nullable=False, unique=True),
-        sa.Column('password', sa.String),
+        sa.Column('password', sa.String,nullable=False),
+        
     )
 
 
 def downgrade():
-    op.drop_table('users')
+    op.drop_table('user')
 
 
+# alembic revision add-columns-to-user

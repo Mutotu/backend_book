@@ -22,7 +22,7 @@ def upgrade():
         'bikes_saved',
          sa.Column('id',sa.Integer, primary_key=True),
          sa.Column('user_id', sa.Integer),
-         sa.Column('bike_pos_id', sa.Integer)
+         sa.Column('bike_post_id', sa.Integer)
     )
 
 

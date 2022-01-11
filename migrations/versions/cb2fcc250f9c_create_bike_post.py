@@ -20,6 +20,7 @@ def upgrade():
     op.create_table(
         'bike_post',
         sa.Column('id', sa.Integer, primary_key=True),
+        sa.Column('photo', sa.String, nullable=False),
         sa.Column('make', sa.String, nullable=False),
         sa.Column('model', sa.String, nullable=False),
         sa.Column('year',sa.String, nullable=False),
